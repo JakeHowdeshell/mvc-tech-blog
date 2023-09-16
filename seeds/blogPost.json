@@ -1,0 +1,27 @@
+[
+  {
+    "username": "Jannet",
+    "title": "What does MVC stand for and why is it important",
+    "content": "(MVC) stands for Model View Controller, a software design pattern commonly used for developing user interfaces that divides the related program logic into three interconnected elements."
+  },
+  {
+    "username": "Raheed",
+    "title": "Why use ORM tools",
+    "content": "Decreases the cost of development. Handles the logic required to interact with databases."
+  },
+  {
+    "username": "Stephanie",
+    "title": "Mastering the Art of Remote Work",
+    "content": "Valuable tips and strategies for staying productive while maintaining work-life balance include setting up a home office, time management, staying connected with colleagues, and prioritizing mental health in a remote work environment."
+  },
+  {
+    "username": "Jake",
+    "title": "The Rise of Artificial Intelligence",
+    "content": "AI technologies are reshaping industries, enhancing efficiency, and creating new opportunities."
+  },
+  {
+    "username": "Raheed",
+    "title": "Cybersecurity in the Modern Age",
+    "content": "A good way to protect your digital assets in clude discussing common cyber threats, password security, two-factor authentication, and emerging trends in cybersecurity."
+  }
+]
