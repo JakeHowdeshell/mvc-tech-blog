@@ -1,22 +1,27 @@
 [
-    {
-        "username": "Jake",
-        "password": "Password1234"
-    },
-    {
-        "username": "John",
-        "password": "Password1234"
-    },
-    {
-        "username": "Stephanie",
-        "password": "Password1234"
-    },
-    {
-        "username": "Jannet",
-        "password": "Password1234"
-    },
-    {
-        "username": "Raheed",
-        "password": "Password1234"
-    }
+  {
+    "id": 1,
+    "username": "Jake",
+    "password": "Password1234"
+  },
+  {
+    "id": 2,
+    "username": "John",
+    "password": "Password1234"
+  },
+  {
+    "id": 3,
+    "username": "Stephanie",
+    "password": "Password1234"
+  },
+  {
+    "id": 4,
+    "username": "Jannet",
+    "password": "Password1234"
+  },
+  {
+    "id": 5,
+    "username": "Raheed",
+    "password": "Password1234"
+  }
 ]
