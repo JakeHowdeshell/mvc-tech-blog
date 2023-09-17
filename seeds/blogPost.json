@@ -2,26 +2,31 @@
   {
     "user_id": 4,
     "title": "What does MVC stand for and why is it important",
-    "content": "(MVC) stands for Model View Controller, a software design pattern commonly used for developing user interfaces that divides the related program logic into three interconnected elements."
+    "content": "(MVC) stands for Model View Controller, a software design pattern commonly used for developing user interfaces that divides the related program logic into three interconnected elements.",
+    "post_date": "8/24/2023"
   },
   {
     "user_id": 5,
     "title": "Why use ORM tools",
-    "content": "Decreases the cost of development. Handles the logic required to interact with databases."
+    "content": "Decreases the cost of development. Handles the logic required to interact with databases.",
+    "post_date": "9/5/2023"
   },
   {
     "user_id": 3,
     "title": "Mastering the Art of Remote Work",
-    "content": "Valuable tips and strategies for staying productive while maintaining work-life balance include setting up a home office, time management, staying connected with colleagues, and prioritizing mental health in a remote work environment."
+    "content": "Valuable tips and strategies for staying productive while maintaining work-life balance include setting up a home office, time management, staying connected with colleagues, and prioritizing mental health in a remote work environment.",
+    "post_date": "8/15/2023"
   },
   {
     "user_id": 1,
     "title": "The Rise of Artificial Intelligence",
-    "content": "AI technologies are reshaping industries, enhancing efficiency, and creating new opportunities."
+    "content": "AI technologies are reshaping industries, enhancing efficiency, and creating new opportunities.",
+    "post_date": "9/1/2023"
   },
   {
     "user_id": 5,
     "title": "Cybersecurity in the Modern Age",
-    "content": "A good way to protect your digital assets in clude discussing common cyber threats, password security, two-factor authentication, and emerging trends in cybersecurity."
+    "content": "A good way to protect your digital assets in clude discussing common cyber threats, password security, two-factor authentication, and emerging trends in cybersecurity.",
+    "post_date": "9/12/2023"
   }
 ]
