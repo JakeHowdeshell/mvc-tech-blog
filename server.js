@@ -12,9 +12,9 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
-
+// need to update sess information accordingly
 const sess = {
-  secret: '',
+  secret: 'Super secret secret',
   cookie: {},
   resave: false,
   saveUninitialized: true,
