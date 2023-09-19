@@ -1,11 +1,6 @@
 {{#each posts as |post|}}
 {{> post-details}}
 <button class="comment-button">Comment</button>
-<div id="comment-form" style="display: none;">
-  <input type="text" id="comment-text" placeholder="Enter your comment">
-  <button id="comment-submit">Submit Comment</button>
-</div>
 {{/each}}
-
 
 <script src="./js/comment.js"></script>
