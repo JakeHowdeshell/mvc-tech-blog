@@ -1,5 +1,13 @@
+
+document.querySelectorAll(".add-comment-button").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    const postId = event.target.previousSibling.getAttribute("data-post-id");
+    window.location.assign(`/comment/${postId}`);
+  });
+});
+
+
 function showCommentForm(postId) {
-  console.log(postId);
   document.querySelectorAll("#comment-form").forEach((form) => {
     form.style.display = "none";
   });
@@ -38,6 +46,7 @@ function submitComment(postId, commentText) {
       console.log("New Comment:", newComment);
       document.querySelector("#comment-text").value = "";
       document.querySelector("#comment-form").style.display = "none";
+      window.location.reload();
     })
     .catch((error) => {
       console.error(error);
@@ -46,7 +55,6 @@ function submitComment(postId, commentText) {
 
 document.querySelectorAll(".comment-button").forEach((button) => {
   button.addEventListener("click", (event) => {
-    console.log("Comment button clicked");
     const postId = event.target.previousSibling.getAttribute("data-post-id");
     showCommentForm(postId);
   });
