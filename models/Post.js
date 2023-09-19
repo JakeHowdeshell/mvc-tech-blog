@@ -17,6 +17,7 @@ Post.init(
     },
     post_date: {
       type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
       allowNull: false,
     },
     title: {
