@@ -19,6 +19,11 @@ Comment.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    post_date: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
+      allowNull: false,
+    },
     content: {
         type: DataTypes.STRING,
         allowNull: false,
