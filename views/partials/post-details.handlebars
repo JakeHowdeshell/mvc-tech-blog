@@ -10,7 +10,9 @@
     <p>{{content}} </p>
   </div>
   {{#each comments}}
-    <p>{{this.content}} - {{user.username}} {{format_date this.post_date}}</p>
+    <div>
+      <p>{{this.content}} - {{user.username}} {{format_date this.post_date}}</p>
+    </div>
   {{/each}}
 
 </section>
