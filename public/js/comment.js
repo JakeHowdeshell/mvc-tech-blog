@@ -31,7 +31,6 @@ function submitComment(postId, commentText) {
     }),
   })
     .then((response) => {
-      console.log(response);
       if (response.ok) {
         if (response.redirected) {
           window.location.assign(response.url);
@@ -42,10 +41,7 @@ function submitComment(postId, commentText) {
         throw new Error("Failed to create comment");
       }
     })
-    .then((newComment) => {
-      console.log("New Comment:", newComment);
-      document.querySelector("#comment-text").value = "";
-      document.querySelector("#comment-form").style.display = "none";
+    .then(() => {
       window.location.reload();
     })
     .catch((error) => {
