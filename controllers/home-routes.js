@@ -47,14 +47,25 @@ router.get("/dashboard", withAuth, async (req, res) => {
           model: User,
           attributes: ["username"],
         },
+        {
+          model: Comment,
+          attributes: ["content", "user_id", "post_date"],
+          include: [
+            {
+              model: User,
+              attributes: ["username"],
+            },
+          ],
+        },
       ],
     });
     const posts = userPostData.map((post) => post.get({ plain: true }));
-    console.log(posts);
+    console.log(loggedInUser);
     res.render("dashboard", {
       posts,
       loggedIn: req.session.loggedIn,
       onDashboard,
+      loggedInUser,
     });
   } catch (err) {
     console.log(err);
@@ -98,15 +109,23 @@ router.get("/comment/:id", withAuth, async (req, res) => {
 });
 
 //   need to add a post route for dashboard
-// router.post('/dashboard', withAuth, async (req, res) => {
-//     try {
-//       const newPost = await Post.create(req.body);
+router.post('/dashboard', withAuth, async (req, res) => {
+    try {
+      const newPost = await Post.create(req.body);
 
-//       res.status(200).json(newPost);
-//     } catch (err) {
-//       res.status(400).json(err);
-//     }
-//   });
+      res.status(200).json(newPost);
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
+
+  // get route for new post
+router.get("/posts", withAuth, (req, res) => {
+  const loggedInUser = req.session.userId;
+  res.render("posts", {
+    loggedInUser,
+  });
+});
 // need to add a put route for dashboard
 // router.put('/dashboard', async (req, res) => {
 //     try {
