@@ -9,6 +9,7 @@ function updatePost(postTitle, postText) {
   const path = window.location.pathname;
   const pathSegments = path.split("/");
   const oldTitle = decodeURIComponent(pathSegments[2]);
+  if (postTitle && postText && oldTitle) {
   console.log(postTitle, postText);
   fetch("/dashboard", {
     method: "PUT",
@@ -40,4 +41,9 @@ function updatePost(postTitle, postText) {
     .catch((error) => {
       console.error(error);
     });
+  }else {
+    const updateMessage = document.querySelector("#message");
+    console.log(updateMessage);
+    updateMessage.style.display = "block";
+  }
 }
