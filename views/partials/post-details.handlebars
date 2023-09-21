@@ -7,10 +7,14 @@
         {{format_date post_date}}
       </p>
     </header>
+    <div class="card-content">
     <p>{{content}} </p>
+    </div>
   </div>
+  </section>
+  <section>
   {{#each comments}}
-    <div>
+    <div class="comment-card">
       <p>{{this.content}} - {{user.username}} {{format_date this.post_date}}</p>
     </div>
   {{/each}}
