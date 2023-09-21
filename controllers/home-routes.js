@@ -95,6 +95,7 @@ router.get("/comment/:id", withAuth, async (req, res) => {
         },
       ],
     });
+  
     const posts = userPostData.get({ plain: true });
 
     console.log(posts);
