@@ -108,7 +108,7 @@ router.get("/comment/:id", withAuth, async (req, res) => {
   }
 });
 
-//   need to add a post route for dashboard
+//   add a post route for dashboard
 router.post("/dashboard", withAuth, async (req, res) => {
   try {
     const newPost = await Post.create(req.body);
@@ -122,13 +122,16 @@ router.post("/dashboard", withAuth, async (req, res) => {
 // get route for new post
 router.get("/posts", withAuth, (req, res) => {
   const loggedInUser = req.session.userId;
+  const onDashboard = true;
   res.render("posts", {
     loggedInUser,
+    onDashboard
   });
 });
 // get route for update-posts
 router.get("/update-posts/:title", withAuth, async (req, res) => {
   const loggedInUser = req.session.userId;
+  const onDashboard = true;
   try {
     console.log(req.params.title);
     const allPost = await Post.findAll(req.body, {
@@ -141,6 +144,7 @@ router.get("/update-posts/:title", withAuth, async (req, res) => {
       posts,
       loggedIn: req.session.loggedIn,
       loggedInUser,
+      onDashboard
     });
   } catch (err) {
     res.status(500).json(err);
