@@ -109,35 +109,60 @@ router.get("/comment/:id", withAuth, async (req, res) => {
 });
 
 //   need to add a post route for dashboard
-router.post('/dashboard', withAuth, async (req, res) => {
-    try {
-      const newPost = await Post.create(req.body);
+router.post("/dashboard", withAuth, async (req, res) => {
+  try {
+    const newPost = await Post.create(req.body);
 
-      res.status(200).json(newPost);
-    } catch (err) {
-      res.status(400).json(err);
-    }
-  });
+    res.status(200).json(newPost);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
-  // get route for new post
+// get route for new post
 router.get("/posts", withAuth, (req, res) => {
   const loggedInUser = req.session.userId;
   res.render("posts", {
     loggedInUser,
   });
 });
+// get route for update-posts
+router.get("/update-posts/:title", withAuth, async (req, res) => {
+  const loggedInUser = req.session.userId;
+  try { console.log(req.params.title);
+    const allPost = await Post.findAll(req.body, {
+      where: {
+        title: req.params.title,
+      },
+    });
+    const posts = allPost.map((post) => post.get({ plain: true }));
+    res.render("update-posts", {
+      posts,
+      loggedIn: req.session.loggedIn,
+      loggedInUser,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 // need to add a put route for dashboard
-// router.put('/dashboard', async (req, res) => {
-//     try {
-//       const newPost = await Post.update({
+router.put("/dashboard", withAuth, async (req, res) => {
+  try {
+    console.log(req.body);
+    const newPost = await Post.update({
+      title: req.body.title,
+      content: req.body.content,
+    }, {
+      where: {
+        title: req.body.oldTitle,
+      },
+    });
 
-//       });
-
-//       res.status(200).json(newPost);
-//     } catch (err) {
-//       res.status(400).json(err);
-//     }
-//   });
+    res.status(200).json(newPost);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 // need to add a delete route for dashboard
 // router.delete('/dashboard', async (req, res) => {
 //     try {
@@ -158,7 +183,7 @@ router.get("/posts", withAuth, (req, res) => {
 //       res.status(500).json(err);
 //     }
 //   });
-//  put route for the homepage to add comments
+//  post route for the homepage to add comments
 router.post("/comment", withAuth, async (req, res) => {
   try {
     const { content, post_id } = req.body;
