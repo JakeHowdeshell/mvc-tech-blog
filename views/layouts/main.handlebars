@@ -4,7 +4,49 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Tech Blog</title>
-    <!-- <link rel="stylesheet" type="text/css" href="/css/jass.css">-->
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        {{#if loggedIn}}
+          <button id="logout" class="logout-button">Logout</button>
+        {{else}}
+          <a href="/login">Login</a>
+        {{/if}}
+      </nav>
+      <div class="title-card">
+        {{#if onDashboard}}
+          <h1 class="header-title">Dashboard</h1>
+        {{else}}
+          <h1 class="header-title">The Tech Blog</h1>
+        {{/if}}
+      </div>
+    </header>
+    <main>
+      <div class="post">
+        {{{body}}}
+      </div>
+    </main>
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+  </body>
+
+</html>
+
+
+
+
+  {{!-- <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Tech Blog</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
   </head>
 
@@ -19,11 +61,13 @@
           <a href="/login">Login</a>
         {{/if}}
       </nav>
+      <div class="card">
       {{#if onDashboard}}
         <h1>Dashboard</h1>
       {{else}}
         <h1>The Tech Blog</h1>
       {{/if}}
+      </div>
     </header>
     <main>
       <div class="post">
@@ -35,4 +79,4 @@
     {{/if}}
   </body>
 
-</html>
+</html> --}}
