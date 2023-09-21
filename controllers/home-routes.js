@@ -129,7 +129,8 @@ router.get("/posts", withAuth, (req, res) => {
 // get route for update-posts
 router.get("/update-posts/:title", withAuth, async (req, res) => {
   const loggedInUser = req.session.userId;
-  try { console.log(req.params.title);
+  try {
+    console.log(req.params.title);
     const allPost = await Post.findAll(req.body, {
       where: {
         title: req.params.title,
@@ -149,14 +150,17 @@ router.get("/update-posts/:title", withAuth, async (req, res) => {
 router.put("/dashboard", withAuth, async (req, res) => {
   try {
     console.log(req.body);
-    const newPost = await Post.update({
-      title: req.body.title,
-      content: req.body.content,
-    }, {
-      where: {
-        title: req.body.oldTitle,
+    const newPost = await Post.update(
+      {
+        title: req.body.title,
+        content: req.body.content,
       },
-    });
+      {
+        where: {
+          title: req.body.oldTitle,
+        },
+      }
+    );
 
     res.status(200).json(newPost);
   } catch (err) {
@@ -164,25 +168,24 @@ router.put("/dashboard", withAuth, async (req, res) => {
   }
 });
 // need to add a delete route for dashboard
-// router.delete('/dashboard', async (req, res) => {
-//     try {
-//       const projectData = await Post.destroy({
-//         where: {
-//           id: req.params.id,
-//           user_id: req.session.user_id,
-//         },
-//       });
+router.delete("/dashboard", async (req, res) => {
+  try {
+    const postData = await Post.destroy({
+      where: {
+        title: req.body.oldTitle,
+      },
+    });
 
-//       if (!projectData) {
-//         res.status(404).json({ message: 'No project found with this id!' });
-//         return;
-//       }
+    if (!postData) {
+      res.status(404).json({ message: "No project found with this id!" });
+      return;
+    }
 
-//       res.status(200).json(projectData);
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   });
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 //  post route for the homepage to add comments
 router.post("/comment", withAuth, async (req, res) => {
   try {
