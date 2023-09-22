@@ -125,7 +125,8 @@ router.get("/posts", withAuth, (req, res) => {
   const onDashboard = true;
   res.render("posts", {
     loggedInUser,
-    onDashboard
+    loggedIn: req.session.loggedIn,
+    onDashboard,
   });
 });
 // get route for update-posts
@@ -133,18 +134,18 @@ router.get("/update-posts/:title", withAuth, async (req, res) => {
   const loggedInUser = req.session.userId;
   const onDashboard = true;
   try {
-    console.log(req.params.title);
-    const allPost = await Post.findAll(req.body, {
+    const allPost = await Post.findOne({
       where: {
         title: req.params.title,
       },
     });
-    const posts = allPost.map((post) => post.get({ plain: true }));
+    const posts = allPost.get({ plain: true });
+
     res.render("update-posts", {
       posts,
       loggedIn: req.session.loggedIn,
       loggedInUser,
-      onDashboard
+      onDashboard,
     });
   } catch (err) {
     res.status(500).json(err);
