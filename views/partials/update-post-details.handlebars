@@ -1,18 +1,26 @@
-<a href="/update-posts/{{title}}"><section class="card" class="post" data-post-id="{{id}}">
-  <div><header>
-      <h4>{{title}}</h4>
-      <p>Posted by
-        {{user.username}}
-        on
-        {{format_date post_date}}
-      </p>
-    </header>
-    <p>{{content}} </p>
-  </div>
+<a href="/update-posts/{{title}}"><section
+    class="up-card"
+    class="post"
+    data-post-id="{{id}}"
+  >
+    <div><header>
+        <h4>{{title}}</h4>
+        <p>Posted by
+          {{user.username}}
+          on
+          {{format_date post_date}}
+        </p>
+      </header>
+      <div class="card-content">
+        <p>{{content}} </p>
+      </div>
+    </div>
+  </section></a>
+<section>
   {{#each comments}}
-    <div>
+    <div class="up-comment-card">
       <p>{{this.content}} - {{user.username}} {{format_date this.post_date}}</p>
     </div>
   {{/each}}
 
-</section></a>
+</section>

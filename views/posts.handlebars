@@ -1,11 +1,11 @@
-<form class="form post-form">
+<form class="form new-post-form">
   <div class="form-group">
     <label for="username-login">Title:</label>
-    <input class="form-input" type="text" id="post-title" />
+    <input class="new-post-input" type="text" id="post-title" />
   </div>
   <div class="form-group">
     <label for="password-login">Content:</label>
-    <input class="form-input" type="text" id="post-content" />
+    <input class="new-post-input" type="text" id="post-content" />
   </div>
   <div class="form-group">
     <button class="submit-button" type="button" data-user-id="{{loggedInUser}}">Create Post</button>
@@ -14,5 +14,6 @@
   <div id="message" style="display: none;">
     <p>Please provide both a title and content</p>
   <div>
+    </form>
 
   <script src="/js/newPost.js"></script>
