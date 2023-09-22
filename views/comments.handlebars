@@ -1,8 +1,8 @@
 {{> post-details posts}}
-<button class="comment-button">Comment</button>
-<div id="comment-form" style="display: none;">
-  <input type="text" id="comment-text" placeholder="Enter your comment">
-  <button id="comment-submit">Submit Comment</button>
+<button class="comment-button" data-post-id="{{id}}">Comment</button>
+<div class="comment-form" id="comment-form" style="display: none;">
+  <input class="comment-text" type="text" id="comment-text" placeholder="Enter your comment">
+  <button class="comment-submit-button" id="comment-submit">Submit Comment</button>
 </div>
 
 
