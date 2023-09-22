@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { User, Post, Comment } = require("../models");
 const withAuth = require("../utils/auth.js");
-
+// get route for homepage
 router.get("/", async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -72,7 +72,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+// get route for comments
 router.get("/comment/:id", withAuth, async (req, res) => {
   const loggedInUser = req.session.userId;
   try {
@@ -108,7 +108,7 @@ router.get("/comment/:id", withAuth, async (req, res) => {
   }
 });
 
-//   add a post route for dashboard
+// post route for dashboard
 router.post("/dashboard", withAuth, async (req, res) => {
   try {
     const newPost = await Post.create(req.body);
@@ -151,7 +151,7 @@ router.get("/update-posts/:title", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-// need to add a put route for dashboard
+// put route for dashboard
 router.put("/dashboard", withAuth, async (req, res) => {
   try {
     console.log(req.body);
@@ -172,7 +172,7 @@ router.put("/dashboard", withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
-// need to add a delete route for dashboard
+// delete route for dashboard
 router.delete("/dashboard", async (req, res) => {
   try {
     const postData = await Post.destroy({
