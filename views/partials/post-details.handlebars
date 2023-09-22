@@ -8,11 +8,11 @@
       </p>
     </header>
     <div class="card-content">
-    <p>{{content}} </p>
+      <p>{{content}} </p>
     </div>
   </div>
-  </section>
-  <section>
+</section>
+<section>
   {{#each comments}}
     <div class="comment-card">
       <p>{{this.content}} - {{user.username}} {{format_date this.post_date}}</p>
