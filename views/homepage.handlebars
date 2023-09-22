@@ -1,6 +1,6 @@
 {{#each posts as |post|}}
 {{> post-details}}
-<button class="add-comment-button">Comment</button>
+<button class="add-comment-button" data-post-id="{{id}}">Comment</button>
 {{/each}} 
 
 <script src="./js/comment.js"></script>
