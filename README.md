@@ -78,6 +78,8 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
 
 ## Usage
 
+Website Link: https://original-tech-blog-ecc03b1e97dd.herokuapp.com/Links to an external site.
+
 This website was designed ot have users login, or sign up, to access a tech blog post. On the homepage they can view others posts and comments as well as add their own comments to others posts. On their dashboard they can create their own posts and then either update those existing posts or delete them. 
 
 ![Screenshot](images/Screenshot.png)
