@@ -72,9 +72,9 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
 
 - Step 3: the user will need to set up a 
 
-- Step 3: The user will need to have a Heroku installed on their PC, this can be achieved by typing 'npm install -g heroku' into their terminal.
+- Step 4: The user will need to have a Heroku installed on their PC, this can be achieved by typing 'npm install -g heroku' into their terminal.
 
-- Step 4: Heroku will need to be linked to your GitHub account. This can be accomplished after creating the app, under deployment method select GitHub.
+- Step 5: Heroku will need to be linked to your GitHub account. This can be accomplished after creating the app, under deployment method select GitHub.
 
 ## Usage
 
