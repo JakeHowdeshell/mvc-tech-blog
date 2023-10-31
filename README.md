@@ -70,7 +70,7 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
 
 - Step 2: Before running the program the user will need to install the packages by typing 'npm install' into the terminal integrated to the location of the folder holding the program.
 
-- Step 3: the user will need to set up a 
+- Step 3: the user will need to set up a Heroku profile.
 
 - Step 4: The user will need to have a Heroku installed on their PC, this can be achieved by typing 'npm install -g heroku' into their terminal.
 
@@ -80,7 +80,7 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
 
 Website Link: https://original-tech-blog-ecc03b1e97dd.herokuapp.com/Links to an external site.
 
-This website was designed ot have users login, or sign up, to access a tech blog post. On the homepage they can view others posts and comments as well as add their own comments to others posts. On their dashboard they can create their own posts and then either update those existing posts or delete them. 
+This website was designed to have users login, or sign up, to access a tech blog post. On the homepage they can view others posts and comments as well as add their own comments to others posts. On their dashboard they can create their own posts and then either update those existing posts or delete them. 
 
 ![Screenshot](images/Screenshot.png)
 
